@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { api } from '../api';
-import { ChartBarIcon, ExclamationCircleIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
+import { ExclamationCircleIcon } from '@heroicons/react/24/outline';
 
 interface ResearchResults {
   influencer: {
