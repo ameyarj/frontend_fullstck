@@ -1,11 +1,12 @@
 import { Link, useLocation } from 'react-router-dom';
-import { HomeIcon, UserGroupIcon, DocumentCheckIcon, ChartBarIcon } from '@heroicons/react/24/outline';
+import { HomeIcon, UserGroupIcon, DocumentCheckIcon, ChartBarIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
   { name: 'Dashboard', href: '/', icon: HomeIcon },
   { name: 'Influencers', href: '/influencers', icon: UserGroupIcon },
   { name: 'Claims', href: '/claims', icon: DocumentCheckIcon },
   { name: 'Analytics', href: '/analytics', icon: ChartBarIcon },
+  { name: 'Research', href: '/research', icon: MagnifyingGlassIcon },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {

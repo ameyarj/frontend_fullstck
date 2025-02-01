@@ -126,5 +126,27 @@ export const api = {
     const response = await fetch(`${API_BASE_URL}/api/analytics/report`);
     if (!response.ok) throw new Error('Failed to fetch analytics report');
     return response.json();
+  },
+
+  async getInfluencerAnalysis(influencerId: string) {
+    const response = await fetch(`${API_BASE_URL}/api/influencers/${influencerId}/analyze`);
+    if (!response.ok) throw new Error('Failed to get influencer analysis');
+    return response.json();
+  },
+  
+  async analyzePodcast(url: string) {
+    const response = await fetch(`${API_BASE_URL}/api/analyze/podcast?url=${encodeURIComponent(url)}`);
+    if (!response.ok) throw new Error('Failed to analyze podcast');
+    return response.json();
+  },
+  
+  async validateWithJournals(claim: string) {
+    const response = await fetch(`${API_BASE_URL}/api/validate/journals`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ claim })
+    });
+    if (!response.ok) throw new Error('Failed to validate with journals');
+    return response.json();
   }
 };
